@@ -1,15 +1,17 @@
 # (c) binsonLi add 
 
 
-all: help libs
-
+all: target
+clean: target_clean
 help:
-	@echo  "libs:    build all platform libs"
-	@echo  "libs_clean clean all platform libs"
+	@echo  "target:    build target"
+	@echo  "target_clean clean all platform libs"
 
-libs:
-	@echo compare com libs 
-	make -C common_libs/osal 
+target:
+	@echo compare target 
+	make -C target
 
+target_clean:
+	make -C target clean
 
-.PHONY:all help libs
+.PHONY:all clean help target target_clean
