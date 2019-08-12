@@ -14,7 +14,8 @@ help:
 
 build:
 	@echo "runing stm32f407-ejd build..."
-	pushd rt-thread/bsp/stm32/stm32f407-ejd; scons -j8 -D; popd;
+	pushd rt-thread/bsp/stm32/stm32f407-ejd;export PATH=${PLATFORM_PATH}/utils/env/tools/scripts:${PATH}; \
+		pkgs --update;scons -j8 -D; popd;
 
 	
 
